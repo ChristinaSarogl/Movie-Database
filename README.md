@@ -1,69 +1,74 @@
-# React + TypeScript + Vite
+# 🎬 Movie Database App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive web application that fetches, displays, and lets users explore movies (and optionally TV series) using The Movie Database (TMDb) API.
 
-Currently, two official plugins are available:
+## 🔍 Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Browse trending, popular, and top-rated movies.
+- View detailed pages containing title, overview, release date, poster images, genres, cast, and related titles.
+- Support for feature enhancements like collections or user favorites.
 
-## Expanding the ESLint configuration
+## 📌 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Feature             | Description                                              |
+|---------------------|----------------------------------------------------------|
+| 🔎 **Search**       | Find movies by title.          |
+| 🧾 **Details**      | Includes metadata, cast info, poster, release date.       |
+| 🗂️ **Collections**  | View if a movie belongs to a collection.   |
+| 🎨 **Responsive UI**| Designed with Tailwind.       |
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **Frontend**: React, Tailwind
+- **API**: TMDb API for real-time movie data, Appwrite for database support
+## ⚙️ Requirements
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js (latest stable version)
+- npm or yarn package manager
+
+
+### Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file:
+
+- `VITE_TMDB_API`
+- `VITE_APPWRITE_PROJECT_ID`
+- `VITE_APPWRITE_ENDPOINT`
+- `VITE_APPWRITE_DATABASE_ID`
+- `VITE_APPWRITE_METRICS_ID`
+
+
+## 🛠️ Setup & Installation
+
+```bash
+# 1. Clone this repo
+git clone https://github.com/ChristinaSarogl/movie-database.git
+cd movie-database
+
+# 2. Install dependencies
+npm install
+
+# 3. Run the app
+npm run dev
+
+# 4. Visit your browser
+
 ```
+## ⚡ Screenshots
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## ❤️ Acknowledgments
+
+- [TMDb API](https://www.themoviedb.org/) for powering all movie data.
+- [Appwrite](https://appwrite.io/) for providing the database storage.
+
+
+## 📄 License
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+
+
+## Authors
+[@ChristinaSarogl](https://github.com/ChristinaSarogl)
