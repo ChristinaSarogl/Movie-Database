@@ -1,7 +1,4 @@
-type SearchProps = {
-  searchTerm: string;
-  setSearchTerm: (value: string) => void;
-}
+import type { SearchProps } from "../custom_types";
 
 function Search({ searchTerm, setSearchTerm }: SearchProps) {
   return (

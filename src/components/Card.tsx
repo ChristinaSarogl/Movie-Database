@@ -1,4 +1,3 @@
-import "../assets/components/Card.css";
 import type { MoviesProps } from "../custom_types";
 
 function Card({

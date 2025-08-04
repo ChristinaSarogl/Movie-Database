@@ -7,6 +7,7 @@ import type { Models } from "appwrite";
 import Search from "./Search.tsx";
 import Spinner from "./Spinner.tsx";
 import Card from "./Card.tsx";
+import NavBar from "./NavBar.tsx";
 
 
 const API_BASE_URL: string = "https://api.themoviedb.org/3";
@@ -21,79 +22,84 @@ const API_OPTIONS = {
 
 
 function App() {
-  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>("");
-  const [searchTerm, setSearhTerm] = useState<string>("");
+  // const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>("");
+  // const [searchTerm, setSearhTerm] = useState<string>("");
 
-  const [movieList, setMovieList] = useState<Array<any>>([]);
-  const [errorMessage, setErrorMessage] = useState<string>("");
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  // const [movieList, setMovieList] = useState<Array<any>>([]);
+  // const [errorMessage, setErrorMessage] = useState<string>("");
+  // const [isLoading, setIsLoading] = useState<boolean>(false);
   
-  const [trendingMovies, setTrendingMovies] = useState<Models.DefaultDocument[]>([]);
+  // const [trendingMovies, setTrendingMovies] = useState<Models.DefaultDocument[]>([]);
 
-  // Debounce the search term to prevent making too many API requests
-  // by waiting fo the user to stop typing for 300ms
-  useDebounce(() => setDebouncedSearchTerm(searchTerm), 300, [searchTerm])
+  // // Debounce the search term to prevent making too many API requests
+  // // by waiting fo the user to stop typing for 300ms
+  // useDebounce(() => setDebouncedSearchTerm(searchTerm), 300, [searchTerm])
 
-  const fetchMovies = async(query = "") => {
-    setIsLoading(true);
-    setErrorMessage('');
+  // const fetchMovies = async(query = "") => {
+  //   setIsLoading(true);
+  //   setErrorMessage('');
 
-    try {
-      const endpoint: string = query 
-      ? `${API_BASE_URL}/search/movie?query=${encodeURIComponent(query)}`
-      : `${API_BASE_URL}/discover/movie?sort_by=popularity.desc`;
+  //   try {
+  //     const endpoint: string = query 
+  //     ? `${API_BASE_URL}/search/movie?query=${encodeURIComponent(query)}`
+  //     : `${API_BASE_URL}/discover/movie?sort_by=popularity.desc`;
       
-      const response: Response = await fetch(endpoint, API_OPTIONS);
+  //     const response: Response = await fetch(endpoint, API_OPTIONS);
       
-      if (!response.ok) {
-        throw new Error('Failed to fetch movies');
-      }
+  //     if (!response.ok) {
+  //       throw new Error('Failed to fetch movies');
+  //     }
 
-      const data = await response.json();
+  //     const data = await response.json();
 
-      if (data.Response === 'False') {
-        setErrorMessage(data.Error || 'Failed to fetch movies.');
-        setMovieList([]);
-        return;
-      }
+  //     if (data.Response === 'False') {
+  //       setErrorMessage(data.Error || 'Failed to fetch movies.');
+  //       setMovieList([]);
+  //       return;
+  //     }
 
-      setMovieList(data.results); 
+  //     setMovieList(data.results); 
 
-      if (query && data.results.length > 0) {
-          await updateSearchCount(query, data.results[0]);
-      }
+  //     if (query && data.results.length > 0) {
+  //         await updateSearchCount(query, data.results[0]);
+  //     }
 
-    } catch(error) {
-      console.error(`Error fetching movies: ${error}`);
-      setErrorMessage('Error fetching movies. Please try again later.');
-    } finally {
-      setIsLoading(false);
-    }
+  //   } catch(error) {
+  //     console.error(`Error fetching movies: ${error}`);
+  //     setErrorMessage('Error fetching movies. Please try again later.');
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
 
-  }
+  // }
 
-  const loadTrendingMovies = async () => {
-    try {
-      const movies = await getTrendingMovies();
+  // const loadTrendingMovies = async () => {
+  //   try {
+  //     const movies = await getTrendingMovies();
 
-      setTrendingMovies(movies ?? []);
+  //     setTrendingMovies(movies ?? []);
 
-    } catch (error) {
-      console.log(`Error fetching trending movies: ${error}`);
-    }
-  }
+  //   } catch (error) {
+  //     console.log(`Error fetching trending movies: ${error}`);
+  //   }
+  // }
 
-  useEffect(() => {
-    fetchMovies(debouncedSearchTerm);
-  }, [debouncedSearchTerm]);
+  // useEffect(() => {
+  //   fetchMovies(debouncedSearchTerm);
+  // }, [debouncedSearchTerm]);
 
-  useEffect(() =>{
-    loadTrendingMovies();
-  }, []);
+  // useEffect(() =>{
+  //   loadTrendingMovies();
+  // }, []);
 
   return (
     <main>
-      <div className="pattern" />
+      <div className="wrapper">
+        <NavBar />
+        <p>Hello World!</p>
+
+      </div>
+      {/* <div className="pattern" />
 
       <div className="wrapper">
         <header>
@@ -142,7 +148,7 @@ function App() {
 
 
 
-      </div>
+      </div> */}
     </main>
   );
 }
