@@ -4,10 +4,10 @@ import { getTrendingMovies, updateSearchCount } from "../appwrite.ts";
 import type { Models } from "appwrite";
 
 
-import Search from "./Search.tsx";
-import Spinner from "./Spinner.tsx";
-import Card from "./Card.tsx";
-import NavBar from "./NavBar.tsx";
+import Search from "../components/Search/Search.tsx";
+import Spinner from "../components/Spinner/Spinner.tsx";
+import Card from "../components/Card/Card.tsx";
+import NavBar from "../components/NavBar/NavBar.tsx";
 
 
 const API_BASE_URL: string = "https://api.themoviedb.org/3";

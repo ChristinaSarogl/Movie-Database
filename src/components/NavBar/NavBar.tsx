@@ -1,8 +1,8 @@
-import "../assets/components/navbar.css";
+import "./navbar.css";
 
 import { useState } from "react";
 
-import Search from "./Search";
+import Search from "../Search/Search.tsx";
 
 function NavBar() {
   const [searchTerm, setSearhTerm] = useState<string>("");
