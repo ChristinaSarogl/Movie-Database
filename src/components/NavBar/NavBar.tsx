@@ -7,7 +7,7 @@ import Button from "../Button/Button.tsx";
 
 function NavBar() {
   const [searchTerm, setSearhTerm] = useState<string>("");
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(true);
 
   return (
     <>
@@ -36,12 +36,12 @@ function NavBar() {
           <Button btn_type="button" classname="icon moon"/>
           {isLoggedIn ? (
               <>
-                <p>profile</p>
-                <Button btn_type="button" classname="text" text="Logout" />
+                <Button btn_type="button" classname="icon profile text primary-hover" text="Profile"/>
+                <Button btn_type="button" classname="text error-hover" text="Logout" />
               </>
           ) : (
             <>
-              <Button btn_type="button" classname="text" text="Login" />
+              <Button btn_type="button" classname="text primary-hover" text="Login" />
               <Button btn_type="button" classname="text filled" text="Sign Up" />
             </>
           )}

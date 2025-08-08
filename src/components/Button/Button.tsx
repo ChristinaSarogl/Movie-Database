@@ -1,4 +1,5 @@
 import Moon from "../icon-components/Moon/Moon";
+import Profile from "../icon-components/Profile/Profile";
 import Sun from "../icon-components/Sun/Sun";
 import "./button.css";
 
@@ -18,6 +19,9 @@ function Button(props: ButtonProps) {
         break;
       case "sun":
         icon_component = <Sun />
+        break;
+      case "profile":
+        icon_component = <Profile />
         break;
       default:
         throw new Error("Failed to the defined icon.");

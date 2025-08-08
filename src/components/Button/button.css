@@ -3,15 +3,22 @@
 :root {
   --primary: #2dd4bf;
   --coral: #ff8a80;
+  --muted-foreground: #64748b;
+  --destructive: #ef4444;
+  --dusty-blue: #6194f4;
+  --warm-orange: #faa74f;
 }
 
-@theme{
+@theme {
   --breakpoint-xs: 480px;
 
   /* COLORS */
   --color-primary: var(--primary);
   --color-coral: var(--coral);
-  
+  --color-muted-foreground: var(--muted-foreground);
+  --color-destructive: var(--destructive);
+  --color-dusty-blue: var(--dusty-blue);  
+  --color-warm-orange: var(--warm-orange);
 }
 
 .icon {
@@ -22,15 +29,52 @@
     height: 1.75rem;
 
     & path {
-      stroke: black;
+      stroke: var(--color-muted-foreground);
+    }
+  }
+
+  &.moon:hover{
+    path{
+      stroke: var(--color-dusty-blue);
+    }
+  }
+
+  &.sun:hover{
+    path {
+      stroke: var(--color-warm-orange);
+    }
+  }
+
+  &.text{
+    @apply flex items-center gap-1;
+
+    &.primary-hover:hover{
+      path{
+        stroke:var(--color-primary);
+      }
+    }
+
+    &.error-hover:hover{
+      path{
+        stroke:var(--color-destructive);
+      }
     }
   }
 }
 
 .text {
-  @apply px-2 py-1 transition-all duration-200 hover:scale-110 font-semibold;
+  @apply rounded-xl px-2 py-1 text-muted-foreground transition-all duration-200 
+    hover:scale-110;
 
-  &.filled{
-    @apply rounded-xl bg-gradient-to-r from-primary to-coral text-[#fafbfc];
+  &.primary-hover {
+    @apply hover:bg-primary/10 hover:text-primary;
+  }
+
+  &.error-hover {
+    @apply hover:bg-destructive/10 hover:text-destructive;
+  }
+
+  &.filled {
+    @apply bg-gradient-to-r from-primary to-coral text-[#fafbfc];
   }
 }

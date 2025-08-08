@@ -7,7 +7,7 @@
   --coral: #ff8a80;
 }
 
-@theme{
+@theme {
   --breakpoint-xs: 480px;
 
   /* COLORS */
@@ -28,13 +28,13 @@
   }
 }
 
-.header-container{
+.header-container {
   @apply flex items-center gap-6;
 
-  & .logo-wrapper{
+  & .logo-wrapper {
     @apply flex items-end gap-1.5 pb-2.5 pt-1;
 
-    & .mask-svg{
+    & .mask-svg {
       mask-repeat: no-repeat;
       mask-size: contain;
       mask-position: center;
@@ -44,7 +44,7 @@
       background-repeat: no-repeat;
       background-size: cover;
 
-      &.mask-logo{
+      &.mask-logo {
         mask-image: url(icons/logo.svg);
         -webkit-mask-image: url(icons/logo.svg);
 
@@ -56,7 +56,7 @@
     }
   }
 
-  & .elements{
+  & .elements {
     @apply flex items-center gap-4 pt-1.5;
   }
 }
