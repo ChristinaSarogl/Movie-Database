@@ -1,4 +1,4 @@
-import type { SearchProps } from "../custom_types";
+import type { SearchProps } from "../../custom_types";
 
 function Search({ searchTerm, setSearchTerm }: SearchProps) {
   return (

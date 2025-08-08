@@ -1,4 +1,4 @@
-import type { MoviesProps } from "../custom_types";
+import type { MoviesProps } from "../../custom_types";
 
 function Card({
   movie: { title, vote_average, poster_path, release_date, original_language },

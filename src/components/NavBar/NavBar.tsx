@@ -3,6 +3,7 @@ import "./navbar.css";
 import { useState } from "react";
 
 import Search from "../Search/Search.tsx";
+import Button from "../Button/Button.tsx";
 
 function NavBar() {
   const [searchTerm, setSearhTerm] = useState<string>("");
@@ -12,33 +13,40 @@ function NavBar() {
     <>
     <header className="header-navbar">
       <div className="header-container">
-        <img className="navbar-logo" src="./logo.svg" alt="Website Logo" />
-        <span>BingeBuddy</span>
+        <div className="logo-wrapper">
+          <div className="mask-svg mask-logo"/>
+          <span>BingeBuddy</span>
+        </div>
+
+        <nav className="elements">
+          <p>Movies</p>
+          <p>Series</p>
+          <p>Discover</p>
+        </nav>
       </div>
 
-      <nav className="header-container">
-        <p>Movies</p>
-        <p>Series</p>
-        <p>Discover</p>
-      </nav>
+      
 
-      <Search searchTerm={searchTerm} setSearchTerm={setSearhTerm}/>
+      
 
       <div className="header-container">
-        <p>Dark mode</p>
-        {isLoggedIn ? (
-          <div className="header-container"> 
-            <p>profile</p>
-            <p>Logout</p>
-          </div>
-        ) : (
-          <div className="header-container">
-            <p>Login</p>
-            <p>Sign Up</p>
-          </div>
-        )}
-        
-        
+        <Search searchTerm={searchTerm} setSearchTerm={setSearhTerm}/>
+
+        <div className="elements"> 
+          <Button btn_type="button" classname="icon moon"/>
+          {isLoggedIn ? (
+              <>
+                <p>profile</p>
+                <Button btn_type="button" classname="text" text="Logout" />
+              </>
+          ) : (
+            <>
+              <Button btn_type="button" classname="text" text="Login" />
+              <Button btn_type="button" classname="text filled" text="Sign Up" />
+            </>
+          )}
+
+        </div> 
         
       </div>
     </header>
