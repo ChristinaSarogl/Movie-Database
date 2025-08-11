@@ -19,10 +19,4 @@ type MoviesProps = {
   movie: MovieInfo;
 };
 
-type SearchProps = {
-  searchTerm: string;
-  setSearchTerm: (value: string) => void;
-}
-
-
-export type {MovieInfo, MoviesProps, SearchProps};
+export type {MovieInfo, MoviesProps};

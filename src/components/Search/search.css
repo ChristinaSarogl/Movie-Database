@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --border: #e2e8f0;
+  --input-text: #8f9baa;
+  --muted-foreground: #64748b;
+  --input-background: #f8fafc;
+
+
+  --primary: #2dd4bf;
+  --coral: #ff8a80;
+  --destructive: #ef4444;
+  --dusty-blue: #6194f4;
+  --warm-orange: #faa74f;
+
+  --shadow-input: 0 0 5px 1px rgba(100, 116, 139, 0.5)
+}
+
+@theme {
+  --breakpoint-xs: 480px;
+
+  /* COLORS */
+  --color-border: var(--border);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-input-background: var(--input-background);
+  --color-input-text: var(--input-text);
+
+  --color-primary: var(--primary);
+  --color-coral: var(--coral);
+  --color-destructive: var(--destructive);
+  --color-dusty-blue: var(--dusty-blue);
+  --color-warm-orange: var(--warm-orange);
+}
+
+.shadow-primary {
+}
+
+.search {
+  @apply flex items-center p-2 gap-2 w-full rounded-xl 
+    border border-border;
+
+  & svg {
+    fill: var(--input-text);
+  }
+
+  & input {
+    @apply bg-input-background 
+      text-sm text-input-text placeholder-input-text;
+
+      &:focus, &:focus-visible{
+        outline: none;
+
+        @apply text-muted-foreground placeholder-muted-foreground;
+      }
+  }
+
+  &:focus-within{
+    box-shadow: var(--shadow-input);
+
+    & svg {
+      fill: var(--muted-foreground)
+    }
+  }
+}
+

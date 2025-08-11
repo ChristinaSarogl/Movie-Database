@@ -7,7 +7,7 @@ import Button from "../Button/Button.tsx";
 
 function NavBar() {
   const [searchTerm, setSearhTerm] = useState<string>("");
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(true);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   return (
     <>
