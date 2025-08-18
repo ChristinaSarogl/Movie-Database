@@ -18,18 +18,12 @@
 
 .header-navbar {
   background-color: #fafbfc;
-  @apply fixed flex flex-row top-0 w-full items-center justify-between px-2 py-0 sm:px-6 sm:py-1;
 
-  & span {
-    font-family: "Jua", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    @apply font-semibold text-2xl;
-  }
+  @apply fixed flex flex-row top-0 w-full items-center justify-between px-2.5 py-0.5 sm:px-6 sm:py-1;
 }
 
 .header-container {
-  @apply flex items-center gap-6;
+  @apply flex items-center gap-3.5 sm:gap-6;
 
   & .logo-wrapper {
     @apply flex items-end gap-1.5 pb-2.5 pt-1;
@@ -48,15 +42,24 @@
         mask-image: url(icons/logo.svg);
         -webkit-mask-image: url(icons/logo.svg);
 
-        width: 2.75rem;
-        height: 2.75rem;
-
-        @apply bg-gradient-to-r from-coral to-primary;
+        @apply bg-gradient-to-r from-coral to-primary w-[2.5rem] h-[2.5rem]
+          sm:w-[2.75rem] sm:h-[2.75rem];
       }
+    }
+
+    & span {
+      font-family: "Jua", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      @apply font-semibold text-xl sm:text-2xl;
     }
   }
 
   & .elements {
-    @apply flex items-center gap-4 pt-1.5;
+    @apply hidden sm:flex items-center gap-4 pt-1.5;
   }
+}
+
+.mobile-menu {
+  @apply sm:hidden mt-1.5;
 }

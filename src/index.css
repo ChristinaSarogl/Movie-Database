@@ -13,7 +13,7 @@
   }
 
   .wrapper {
-    @apply flex flex-col relative z-10;
+    @apply flex flex-col relative z-10 mt-[58px] sm:mt-[66px];
   }
 }
 /* @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");

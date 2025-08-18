@@ -1,3 +1,4 @@
+import Button from "../Button/Button";
 import "./search.css";
 
 type SearchProps = {
@@ -8,7 +9,7 @@ type SearchProps = {
 function Search({ searchTerm, setSearchTerm }: SearchProps) {
   return (
     <>
-      <div className="search group">
+      <div className="desktop-search">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               fillRule="evenodd"
@@ -23,6 +24,10 @@ function Search({ searchTerm, setSearchTerm }: SearchProps) {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
+      </div>
+
+      <div className="mobile-search">
+        <Button btn_type="button" classname="icon search" />
       </div>
     </>
   );

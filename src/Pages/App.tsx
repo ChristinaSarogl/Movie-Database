@@ -94,8 +94,8 @@ function App() {
 
   return (
     <main>
+      <NavBar />
       <div className="wrapper">
-        <NavBar />
         <p>Hello World!</p>
 
       </div>

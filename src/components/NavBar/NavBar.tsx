@@ -25,10 +25,6 @@ function NavBar() {
         </nav>
       </div>
 
-      
-
-      
-
       <div className="header-container">
         <Search searchTerm={searchTerm} setSearchTerm={setSearhTerm}/>
 
@@ -45,10 +41,14 @@ function NavBar() {
               <Button btn_type="button" classname="text filled" text="Sign Up" />
             </>
           )}
-
         </div> 
+
+        <div className="mobile-menu">
+          <Button btn_type="button" classname="icon menu" />
+        </div>
         
       </div>
+
     </header>
     </>
   );

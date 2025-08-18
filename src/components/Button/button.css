@@ -28,13 +28,19 @@
     width: 1.75rem;
     height: 1.75rem;
 
-    & path {
+    & path, line {
       stroke: var(--color-muted-foreground);
     }
   }
 
+  &.search {
+    & path {
+      stroke: none;
+    }
+  }
+
   &.moon:hover, &.moon:focus, &.moon:focus-visible{
-    path{
+    path {
       stroke: var(--color-dusty-blue);
     }
   }

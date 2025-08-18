@@ -1,5 +1,7 @@
+import Menu from "../icon-components/Menu/Menu";
 import Moon from "../icon-components/Moon/Moon";
 import Profile from "../icon-components/Profile/Profile";
+import Search from "../icon-components/Search/Search";
 import Sun from "../icon-components/Sun/Sun";
 import "./button.css";
 
@@ -22,6 +24,12 @@ function Button(props: ButtonProps) {
         break;
       case "profile":
         icon_component = <Profile />
+        break;
+      case "search":
+        icon_component = <Search />
+        break;
+      case "menu" :
+        icon_component = <Menu />
         break;
       default:
         throw new Error("Failed to the defined icon.");

@@ -31,12 +31,18 @@
   --color-dusty-blue: var(--dusty-blue);
   --color-warm-orange: var(--warm-orange);
 }
+.mobile-search {
+  @apply sm:hidden mt-1.5;
 
-.shadow-primary {
+  & svg {
+    fill: var(--input-text);
+
+    @apply w-[1.438rem] h-[1.438rem];
+  }
 }
 
-.search {
-  @apply flex items-center p-2 gap-2 w-full rounded-xl 
+.desktop-search {
+  @apply hidden sm:flex mt-1.5 items-center p-2 gap-2 w-full rounded-xl 
     border border-border;
 
   & svg {
@@ -62,4 +68,5 @@
     }
   }
 }
+
 
